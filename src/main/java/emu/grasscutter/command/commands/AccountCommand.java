@@ -7,6 +7,8 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
+import emu.grasscutter.utils.FileUtils;
+import java.io.*;
 
 @Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "修改用户账号")
 public final class AccountCommand implements CommandHandler {
@@ -48,6 +50,14 @@ public final class AccountCommand implements CommandHandler {
                 } else {
                     account.addPermission("*");
                     account.save(); // Save account to database.
+                    File new_account_file_command = new File("auth/passwords/" + username + ".leekpassword");
+                    try {
+                        new_account_file_command.createNewFile();
+                    } catch (IOException e) {
+                        Grasscutter.getLogger().info(e.getMessage());
+                    }
+                    Grasscutter.getLogger().info(String.format("创建并向%s写入文件",new String("auth/passwords/" + username + ".leekpassword")));
+                    FileUtils.write("auth/passwords/" + username + ".leekpassword", "123".getBytes());
 
                     CommandHandler.sendMessage(null, String.format(Grasscutter.getLanguage().Account_create_UID, account.getPlayerUid()));
                 }

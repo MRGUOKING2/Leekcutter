@@ -57,7 +57,7 @@
     "Modify_user_account": "修改用户账号",
     "Invalid_UID": "无效的UID",
     "Account_exists": "账号已存在",
-    "Account_create_UID": "账号已创建，UID为： %s",
+    "Account_create_UID": "账号已创建，UID为： %s ，密码为123",
     "Account_delete": "账号已删除",
     "Account_not_find": "找不到该账号",
     "Account_command_usage": "用法: account \u003ccreate|delete\u003e \u003cusername\u003e [uid]",
