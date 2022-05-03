@@ -65,3 +65,4 @@ mitmdump.exe
 mongod.exe
 /src/generated/
 /*.sh
+auth

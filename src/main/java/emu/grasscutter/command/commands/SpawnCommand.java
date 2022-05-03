@@ -78,7 +78,7 @@ public final class SpawnCommand implements CommandHandler {
 
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format("已生成 %s 个 %s.", amount, entity));
+            CommandHandler.sendMessage(sender, String.format("已生成 %s 个", amount));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, "无效的物品或玩家id");
         }
