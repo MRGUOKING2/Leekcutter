@@ -138,7 +138,7 @@ public final class Grasscutter {
 			language = gson.fromJson(file, Language.class);
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
-			Grasscutter.config.Language = "en_us";
+			Grasscutter.config.Language = "zh_cn";
 			saveConfig();
 
 			try {
