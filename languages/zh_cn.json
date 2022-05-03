@@ -96,7 +96,7 @@
     "Give_usage": "用法: give \u003cplayer\u003e \u003citemId|itemName\u003e [amount] [level]",
     "Give_refinement_only_applicable_weapons": "Refinement只适用于武器",
     "Give_refinement_must_between_1_and_5": "Refinement只能在1至5中间",
-    "Give_given": "给了 %s of %s 至 %s.",
+    "Give_given": "给了 %s 个 %s 至 %s.",
     "Give_given_with_level_and_refinement": "给了 %s ，等级为 %s, refinement %s %s times to %s",
     "Give_given_level": "给了 %s 等级为 %s %s times to %s",
     "Godmode_status": "无敌现已 %s 目标是 %s .",
