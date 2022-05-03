@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -18,19 +19,19 @@ import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Random;
 
-@Command(label = "spawn", usage = "spawn <entityId|entityName> [level] [amount]",
-        description = "在你周围生成实体", permission = "server.spawn")
+@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]",
+        description = "Spawns an entity near you", permission = "server.spawn")
 public final class SpawnCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "请在游戏内执行此指令");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "用法: spawn <entityId|entityName> [amount]");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Spawn_usage);
             return;
         }
 
@@ -43,7 +44,7 @@ public final class SpawnCommand implements CommandHandler {
             GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
             ItemData itemData = GameData.getItemDataMap().get(id);
             if (monsterData == null && gadgetData == null && itemData == null) {
-                CommandHandler.sendMessage(sender, "无效的实体id");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_entity_id);
                 return;
             }
 
@@ -78,9 +79,9 @@ public final class SpawnCommand implements CommandHandler {
 
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format("已生成 %s 个", amount));
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Spawn_message, amount, id));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "无效的物品或玩家id");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_entity_id);
         }
     }
 

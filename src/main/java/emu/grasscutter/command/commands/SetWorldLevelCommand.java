@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -7,26 +8,26 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "setworldlevel", usage = "setworldlevel <level>",
-        description = "设置世界等级(重新登录即可生效)",
+        description = "Sets your world level (Relog to see proper effects)",
         aliases = {"setworldlvl"}, permission = "player.setworldlevel")
 public final class SetWorldLevelCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "请在游戏内执行该指令");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return; // TODO: set player's world level from console or other players
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "用法: setworldlevel <level>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetWorldLevel_usage);
             return;
         }
 
         try {
             int level = Integer.parseInt(args.get(0));
             if (level > 8 || level < 0) {
-                sender.dropMessage("World level must be between 0-8");
+                sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_world_level_must_between_0_and_8);
                 return;
             }
 
@@ -34,9 +35,9 @@ public final class SetWorldLevelCommand implements CommandHandler {
             sender.getWorld().setWorldLevel(level);
             sender.setWorldLevel(level);
 
-            sender.dropMessage("世界等级已设定为 " + level + ".");
+            sender.dropMessage(String.format(Grasscutter.getLanguage().SetWorldLevel_set_world_level, level));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(null, "无效的世界等级");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().SetWorldLevel_invalid_world_level);
         }
     }
 }

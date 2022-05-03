@@ -8,13 +8,13 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "godmode", usage = "godmode [playerId]",
-        description = "开纪让你无敌", permission = "player.godmode")
+        description = "Prevents you from taking damage", permission = "player.godmode")
 public final class GodModeCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "请在游戏内执行该指令");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return; // TODO: toggle player's godmode statue from console or other players
         }
 
@@ -26,7 +26,7 @@ public final class GodModeCommand implements CommandHandler {
                     target = sender.getUid();
                 }
             } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "无效的玩家id");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                 return;
             }
         } else {
@@ -34,12 +34,14 @@ public final class GodModeCommand implements CommandHandler {
         }
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "玩家都找不到还开nm纪");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         targetPlayer.setGodmode(!targetPlayer.inGodmode());
-        sender.dropMessage("纪现在已经" + (targetPlayer.inGodmode() ? "开启，" : "关闭，") +
-                "只为我们的纪狗 " + targetPlayer.getNickname() + " 。");
+        sender.dropMessage(String.format(Grasscutter.getLanguage().Godmode_status,
+                (targetPlayer.inGodmode() ? Grasscutter.getLanguage().Enabled : Grasscutter.getLanguage().Disabled),
+                targetPlayer.getNickname()
+        ));
     }
 }

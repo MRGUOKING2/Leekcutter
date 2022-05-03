@@ -72,7 +72,7 @@ public final class GameServer extends KcpServer {
 				try {
 					onTick();
 				} catch (Exception e) {
-					Grasscutter.getLogger().error("An error occurred during game update.", e);
+					Grasscutter.getLogger().error(Grasscutter.getLanguage().An_error_occurred_during_game_update, e);
 				}
 			}
 		}, new Date(), 1000L);
@@ -207,8 +207,8 @@ public final class GameServer extends KcpServer {
 
 	@Override
 	public void onStartFinish() {
-		Grasscutter.getLogger().info("Leekcutter是免费且开源的软件。如果您是通过购买的方式获取到此软件，那么恭喜你被骗了。开源地址：https://github.com/Searchstars/Leekcutter");
-		Grasscutter.getLogger().info("游戏服务器已在此端口上开启： " + address.getPort());
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().grasscutter_is_free);
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Game_start_port, address.getPort()));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

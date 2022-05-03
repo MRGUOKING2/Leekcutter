@@ -7,14 +7,14 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "say", usage = "say <player> <message>", description = "作为服务器发送消息给玩家",
+@Command(label = "say", usage = "say <player> <message>", description = "Sends a message to a player as the server",
         aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage")
 public final class SendMessageCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 2) {
-            CommandHandler.sendMessage(null, "用法: sendmessage <player> <message>");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().SendMessage_usage);
             return;
         }
 
@@ -24,14 +24,14 @@ public final class SendMessageCommand implements CommandHandler {
 
             Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if (targetPlayer == null) {
-                CommandHandler.sendMessage(sender, "没有这个玩家");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
                 return;
             }
 
             CommandHandler.sendMessage(targetPlayer, message);
-            CommandHandler.sendMessage(sender, "消息已发送");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SenaMessage_message_sent);
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "无效的玩家id");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
         }
     }
 }

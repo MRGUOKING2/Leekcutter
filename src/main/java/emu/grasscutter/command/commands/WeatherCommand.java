@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -9,18 +10,18 @@ import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 import java.util.List;
 
 @Command(label = "weather", usage = "weather <weatherId> [climateId]",
-        description = "改变weather", aliases = {"w"}, permission = "player.weather")
+        description = "Changes the weather.", aliases = {"w"}, permission = "player.weather")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "请在游戏内执行此指令");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "用法: weather <weatherId> [climateId]");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_usage);
             return;
         }
 
@@ -33,9 +34,9 @@ public final class WeatherCommand implements CommandHandler {
             sender.getScene().setWeather(weatherId);
             sender.getScene().setClimate(climate);
             sender.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(sender));
-            CommandHandler.sendMessage(sender, "已将天气修改为 " + weatherId + " 并将气候修改为 " + climateId);
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Weather_message, weatherId, climateId));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "无效的ID");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
         }
     }
 }

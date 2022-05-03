@@ -8,13 +8,13 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "broadcast", usage = "broadcast <message>",
-        description = "发送消息给该服务器内所有的玩家", aliases = {"b"}, permission = "server.broadcast")
+        description = "Sends a message to all the players", aliases = {"b"}, permission = "server.broadcast")
 public final class BroadcastCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "用法: broadcast <message>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Broadcast_command_usage);
             return;
         }
 
@@ -24,6 +24,6 @@ public final class BroadcastCommand implements CommandHandler {
             CommandHandler.sendMessage(p, message);
         }
 
-        CommandHandler.sendMessage(sender, "消息已发送");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Broadcast_message_sent);
     }
 }

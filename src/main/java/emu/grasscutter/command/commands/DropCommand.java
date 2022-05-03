@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -11,18 +12,18 @@ import emu.grasscutter.utils.Position;
 import java.util.List;
 
 @Command(label = "drop", usage = "drop <itemId|itemName> [amount]",
-        description = "在玩家附件掉落你指定的物品", aliases = {"d", "dropitem"}, permission = "server.drop")
+        description = "Drops an item near you", aliases = {"d", "dropitem"}, permission = "server.drop")
 public final class DropCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "请在游戏中执行该指令");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "用法: drop <itemId|itemName> [amount]");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_usage);
             return;
         }
 
@@ -33,7 +34,7 @@ public final class DropCommand implements CommandHandler {
 
             ItemData itemData = GameData.getItemDataMap().get(item);
             if (itemData == null) {
-                CommandHandler.sendMessage(sender, "无效的物品id，你或许需要一份HandBook？");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
                 return;
             }
 
@@ -48,9 +49,9 @@ public final class DropCommand implements CommandHandler {
                 EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, sender.getPos().clone().addY(3f), amount);
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format("已掉落了 %s 个 %s", amount, item));
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Drop_dropped_of, amount, item));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "无效的物品或玩家id");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
         }
     }
 }

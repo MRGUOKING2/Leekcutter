@@ -14,7 +14,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.*;
 
 @Command(label = "giveall", usage = "giveall [player] [amount]",
-        description = "给予指定玩家全部物品", aliases = {"givea"}, permission = "player.giveall", threading = true)
+        description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
 public final class GiveAllCommand implements CommandHandler {
 
     @Override
@@ -24,7 +24,7 @@ public final class GiveAllCommand implements CommandHandler {
         switch (args.size()) {
             case 0: // *no args*
                 if (sender == null) {
-                    CommandHandler.sendMessage(null, "请在游戏内执行该指令");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
                     return;
                 }
                 target = sender.getUid();
@@ -34,11 +34,11 @@ public final class GiveAllCommand implements CommandHandler {
                 try {
                     target = Integer.parseInt(args.get(0));
                     if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "无效的玩家id");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                         return;
                     }
                 }catch (NumberFormatException ignored){
-                    CommandHandler.sendMessage(sender, "无效的玩家id");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                     return;
                 }
                 break;
@@ -53,28 +53,28 @@ public final class GiveAllCommand implements CommandHandler {
                         amount = Integer.parseInt(args.get(1));
                     }
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "无效的数量或玩家id");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_invalid_amount_or_playerId);
                     return;
                 }
                 break;
 
             default: // invalid
-                CommandHandler.sendMessage(null, "用法: giveall [player] [amount]");
+                CommandHandler.sendMessage(null, Grasscutter.getLanguage().GiveAll_usage);
                 return;
         }
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "查无此人");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         this.giveAllItems(targetPlayer, amount);
-        CommandHandler.sendMessage(sender, "完毕！");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_done);
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, "正在给这个b所有物品...");
+        CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
 
         for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar
