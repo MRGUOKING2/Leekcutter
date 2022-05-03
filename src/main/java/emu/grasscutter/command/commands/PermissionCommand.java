@@ -9,7 +9,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "permission", usage = "permission <add|remove> <username> <permission>",
-        description = "Grants or removes a permission for a user", permission = "*")
+        description = "授予或删除用户的权限", permission = "*")
 public final class PermissionCommand implements CommandHandler {
 
     @Override

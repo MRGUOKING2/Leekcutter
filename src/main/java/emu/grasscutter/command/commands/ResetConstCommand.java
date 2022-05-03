@@ -10,7 +10,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "resetconst", usage = "resetconst [all]",
-        description = "Resets the constellation level on your current active character, will need to relog after using the command to see any changes.",
+        description = "重置当前角色的命座，使用命令后重新登录生效",
         aliases = {"resetconstellation"}, permission = "player.resetconstellation")
 public final class ResetConstCommand implements CommandHandler {
 

@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "stop", usage = "stop",
-        description = "Stops the server", permission = "server.stop")
+        description = "关闭此服务器", permission = "server.stop")
 public final class StopCommand implements CommandHandler {
 
     @Override

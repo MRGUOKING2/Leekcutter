@@ -10,7 +10,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
-        description = "Deletes unequipped unlocked items, including yellow rarity ones from your inventory",
+        description = "删除未装备的解锁物品，包括五星",
         aliases = {"clear"}, permission = "player.clearinv")
 
 public final class ClearCommand implements CommandHandler {

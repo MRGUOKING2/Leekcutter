@@ -12,7 +12,7 @@ import emu.grasscutter.utils.Position;
 import java.util.List;
 
 @Command(label = "drop", usage = "drop <itemId|itemName> [amount]",
-        description = "Drops an item near you", aliases = {"d", "dropitem"}, permission = "server.drop")
+        description = "掉落一个物品在你附近", aliases = {"d", "dropitem"}, permission = "server.drop")
 public final class DropCommand implements CommandHandler {
 
     @Override

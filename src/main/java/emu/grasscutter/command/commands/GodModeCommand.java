@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "godmode", usage = "godmode [playerId]",
-        description = "Prevents you from taking damage", permission = "player.godmode")
+        description = "让你选定的玩家无敌", permission = "player.godmode")
 public final class GodModeCommand implements CommandHandler {
 
     @Override

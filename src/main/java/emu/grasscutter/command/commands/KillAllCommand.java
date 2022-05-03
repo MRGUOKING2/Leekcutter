@@ -11,7 +11,7 @@ import emu.grasscutter.game.world.Scene;
 import java.util.List;
 
 @Command(label = "killall", usage = "killall [playerUid] [sceneId]",
-        description = "Kill all entities", permission = "server.killall")
+        description = "杀死指定玩家指定场景中的一切", permission = "server.killall")
 public final class KillAllCommand implements CommandHandler {
 
     @Override

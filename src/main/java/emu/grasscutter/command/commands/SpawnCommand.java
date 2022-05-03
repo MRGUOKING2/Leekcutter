@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Random;
 
 @Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]",
-        description = "Spawns an entity near you", permission = "server.spawn")
+        description = "生成一个实体在你附近", permission = "server.spawn")
 public final class SpawnCommand implements CommandHandler {
 
     @Override

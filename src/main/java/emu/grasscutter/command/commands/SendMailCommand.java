@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]",
-        description = "Sends mail to the specified user. The usage of this command changes based on it's composition state.", permission = "server.sendmail")
+        description = "发送邮件，详见参数", permission = "server.sendmail")
 public final class SendMailCommand implements CommandHandler {
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish

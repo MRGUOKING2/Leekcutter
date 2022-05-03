@@ -11,7 +11,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "givechar", usage = "givechar <playerId> <avatarId> [level]",
-        description = "Gives the player a specified character", aliases = {"givec"}, permission = "player.givechar")
+        description = "给你选定的玩家一个选定的角色", aliases = {"givec"}, permission = "player.givechar")
 public final class GiveCharCommand implements CommandHandler {
 
     @Override

@@ -9,7 +9,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.*;
 
 @Command(label = "help", usage = "help [command]",
-        description = "Sends the help message or shows information about a specified command")
+        description = "给你发送帮助信息")
 public final class HelpCommand implements CommandHandler {
 
     @Override

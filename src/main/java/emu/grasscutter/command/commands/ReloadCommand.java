@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "reload", usage = "reload",
-        description = "Reload server config", permission = "server.reload")
+        description = "重载服务器config", permission = "server.reload")
 public final class ReloadCommand implements CommandHandler {
 
     @Override

@@ -13,7 +13,7 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import java.util.List;
 
 @Command(label = "killcharacter", usage = "killcharacter [playerId]", aliases = {"suicide", "kill"},
-        description = "Kills the players current character", permission = "player.killcharacter")
+        description = "杀死选定玩家的当前角色", permission = "player.killcharacter")
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override

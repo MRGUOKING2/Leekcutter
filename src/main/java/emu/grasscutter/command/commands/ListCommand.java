@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Command(label = "list", usage = "list [uid]",
-        description = "List online players", aliases = {"players"})
+        description = "列出目前在线的玩家", aliases = {"players"})
 public final class ListCommand implements CommandHandler {
 
     @Override

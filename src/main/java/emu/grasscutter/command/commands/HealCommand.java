@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import java.util.List;
 
 @Command(label = "heal", usage = "heal|h", aliases = {"h"},
-        description = "Heal all characters in your current team.", permission = "player.heal")
+        description = "治疗队伍中的所有角色", permission = "player.heal")
 public final class HealCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {

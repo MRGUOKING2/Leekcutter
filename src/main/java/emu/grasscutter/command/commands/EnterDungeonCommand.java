@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>",
-        description = "Enter a dungeon", aliases = {"dungeon"}, permission = "player.enterdungeon")
+        description = "进入一个秘境", aliases = {"dungeon"}, permission = "player.enterdungeon")
 public final class EnterDungeonCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {

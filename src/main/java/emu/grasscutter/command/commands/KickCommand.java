@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "kick", usage = "kick <player>",
-        description = "Kicks the specified player from the server (WIP)", permission = "server.kick")
+        description = "从你的服务器中踢出选定的玩家", permission = "server.kick")
 public final class KickCommand implements CommandHandler {
 
     @Override

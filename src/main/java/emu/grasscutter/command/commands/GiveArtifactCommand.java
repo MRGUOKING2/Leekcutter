@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified artifact", aliases = {"gart"}, permission = "player.giveart")
+@Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "给你选定的玩家一个自定义的圣遗物", aliases = {"gart"}, permission = "player.giveart")
 public final class GiveArtifactCommand implements CommandHandler {
 	@Override
 	public void execute(Player sender, List<String> args) {

@@ -13,7 +13,7 @@ import emu.grasscutter.game.props.ActionReason;
 import java.util.LinkedList;
 import java.util.List;
 
-@Command(label = "give", usage = "give [player] <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
+@Command(label = "give", usage = "give [player] <itemId|itemName> [amount] [level]", description = "给你选定的玩家选定数量的物品", aliases = {
         "g", "item", "giveitem"}, permission = "player.give")
 public final class GiveCommand implements CommandHandler {
 

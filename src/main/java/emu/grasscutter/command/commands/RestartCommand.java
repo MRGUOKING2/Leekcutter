@@ -6,7 +6,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "restart", usage = "restart - ÖØÆô·şÎñ¶Ë")
+@Command(label = "restart", usage = "restart - é‡å¯æœåŠ¡ç«¯")
 public final class RestartCommand implements CommandHandler {
 
     @Override

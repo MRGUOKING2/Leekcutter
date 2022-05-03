@@ -9,7 +9,7 @@ import emu.grasscutter.utils.Position;
 import java.util.List;
 
 @Command(label = "teleport", usage = "teleport [@player id] <x> <y> <z> [scene id]", aliases = {"tp"},
-        description = "Change the player's position.", permission = "player.teleport")
+        description = "修改玩家位置", permission = "player.teleport")
 public final class TeleportCommand implements CommandHandler {
 
     @Override

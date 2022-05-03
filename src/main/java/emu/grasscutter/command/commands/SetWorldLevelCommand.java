@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "setworldlevel", usage = "setworldlevel <level>",
-        description = "Sets your world level (Relog to see proper effects)",
+        description = "设置你的世界等级",
         aliases = {"setworldlvl"}, permission = "player.setworldlevel")
 public final class SetWorldLevelCommand implements CommandHandler {
 

@@ -7,7 +7,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "say", usage = "say <player> <message>", description = "Sends a message to a player as the server",
+@Command(label = "say", usage = "say <player> <message>", description = "作为服务器给选定玩家发送消息",
         aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage")
 public final class SendMessageCommand implements CommandHandler {
 

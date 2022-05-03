@@ -9,7 +9,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "changescene", usage = "changescene <scene id>",
-        description = "Changes your scene", aliases = {"scene"}, permission = "player.changescene")
+        description = "切换你的场景", aliases = {"scene"}, permission = "player.changescene")
 public final class ChangeSceneCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {

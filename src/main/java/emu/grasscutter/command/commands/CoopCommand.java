@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "coop", usage = "coop",
-        description = "Forces someone to join the world of others", permission = "server.coop")
+        description = "强制某人加入他人的世界", permission = "server.coop")
 public final class CoopCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {

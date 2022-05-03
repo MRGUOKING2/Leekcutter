@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "position", usage = "position", aliases = {"pos"},
-        description = "Get coordinates.")
+        description = "获取坐标")
 public final class PositionCommand implements CommandHandler {
 
     @Override

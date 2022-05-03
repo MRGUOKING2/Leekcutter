@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "resetshop", usage = "resetshop",
-        description = "Reset target player's shop refresh time.", permission = "server.resetshop")
+        description = "重置选定玩家的商店刷新时间", permission = "server.resetshop")
 public final class ResetShopLimitCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {

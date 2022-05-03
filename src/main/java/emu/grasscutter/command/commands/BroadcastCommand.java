@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(label = "broadcast", usage = "broadcast <message>",
-        description = "Sends a message to all the players", aliases = {"b"}, permission = "server.broadcast")
+        description = "给此服务器内的所有玩家法消息", aliases = {"b"}, permission = "server.broadcast")
 public final class BroadcastCommand implements CommandHandler {
 
     @Override

@@ -13,7 +13,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarSkillUpgradeRsp;
 import java.util.List;
 
 @Command(label = "talent", usage = "talent <talentID> <value>",
-        description = "Set talent level for your current active character", permission = "player.settalent")
+        description = "为你当前的角色设置天赋等级", permission = "player.settalent")
 public final class TalentCommand implements CommandHandler {
 
     @Override

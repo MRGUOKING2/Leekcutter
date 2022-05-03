@@ -10,7 +10,7 @@ import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 import java.util.List;
 
 @Command(label = "weather", usage = "weather <weatherId> [climateId]",
-        description = "Changes the weather.", aliases = {"w"}, permission = "player.weather")
+        description = "修改天气", aliases = {"w"}, permission = "player.weather")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
