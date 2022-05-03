@@ -38,7 +38,7 @@ public class GameDepot {
 		}
 		// Let the server owner know if theyre missing weights
 		if (relicMainPropDepot.size() == 0 || relicAffixDepot.size() == 0) {
-			Grasscutter.getLogger().error("ÎÄÎïÊôĞÔÈ±ÉÙÈ¨ÖØ£¡Çë¼ì²éExcelBinOutputÎÄ¼ş¼ĞÖĞµÄReliquaryMapinPropertyXcelConfigData»òReliquaryAffixExcelConfigDataÎÄ¼ş¡£");
+			Grasscutter.getLogger().error("æ–‡ç‰©å±æ€§ç¼ºå°‘æƒé‡ï¼è¯·æ£€æŸ¥ExcelBinOutputæ–‡ä»¶å¤¹ä¸­çš„ReliquaryMapinPropertyXcelConfigDataæˆ–ReliquaryAffixExcelConfigDataæ–‡ä»¶ã€‚");
 		}
 	}
 	

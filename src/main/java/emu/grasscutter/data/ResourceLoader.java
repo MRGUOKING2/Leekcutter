@@ -105,7 +105,7 @@ public class ResourceLoader {
 			try {
 				loadFromResource(resourceDefinition, type, map);
 			} catch (Exception e) {
-				Grasscutter.getLogger().error("×ÊÔ´ÎÄ¼ş¼ÓÔØÊ§°Ü: " + Arrays.toString(type.name()), e);
+				Grasscutter.getLogger().error("èµ„æºæ–‡ä»¶åŠ è½½å¤±è´¥: " + Arrays.toString(type.name()), e);
 			}
 		}
 	}
@@ -115,7 +115,7 @@ public class ResourceLoader {
 		for (String name : type.name()) {
 			loadFromResource(c, name, map);
 		}
-		Grasscutter.getLogger().info("¼ÓÔØÁË " + map.size() + " ¸ö " + c.getSimpleName());
+		Grasscutter.getLogger().info("åŠ è½½äº† " + map.size() + " ä¸ª " + c.getSimpleName());
 	}
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})

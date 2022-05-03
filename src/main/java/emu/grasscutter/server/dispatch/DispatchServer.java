@@ -306,39 +306,39 @@ public final class DispatchServer {
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
 			} catch (Exception ignored) { }
 			String[] account_username_and_password = requestData.account.split(":");
-			Grasscutter.getLogger().info(String.format("[Dispatch] ¿Í»§¶ËÓÃ»§µÇÂ¼£¬ÕËºÅ£º%s£¬ÃÜÂë£º%s", account_username_and_password[0], account_username_and_password[1]));
+			Grasscutter.getLogger().info(String.format("[Dispatch] å®¢æˆ·ç«¯ç”¨æˆ·ç™»å½•ï¼Œè´¦å·ï¼š%sï¼Œå¯†ç ï¼š%s", account_username_and_password[0], account_username_and_password[1]));
 			File folder_exs = new File("auth/passwords");
 			if (!folder_exs.exists() && !folder_exs.isDirectory()) {
 				folder_exs.mkdirs();
-				return;//ÎÄ¼ş¼Ğ²»´æÔÚÄÇ¾Í´´½¨£¬¸Õ´´½¨µÄÎÄ¼ş¼ĞÀïÃæÔõÃ´¿ÉÄÜÓĞ¶«Î÷£¬Èó£¡
+				return;//æ–‡ä»¶å¤¹ä¸å­˜åœ¨é‚£å°±åˆ›å»ºï¼Œåˆšåˆ›å»ºçš„æ–‡ä»¶å¤¹é‡Œé¢æ€ä¹ˆå¯èƒ½æœ‰ä¸œè¥¿ï¼Œæ¶¦ï¼
 			}
 			else{
-				//ÄãÒªËµ£¬ÕâÎÄ¼ş¼ĞËûÒªÊÇ´æÔÚ£¬ÄÇÔõÃ´°ìÄó
-				//ÕâÎÄ¼ş¼ĞÒªÊÇ´æÔÚ£¬ÎÒ¾Í×Ô¼º³ÔÁËËü£¬ÂúÒâÁË°É
-				//´úÂë£ºelse      ¿´£¬ÎÄ¼ş¼Ğ
-				//Äãtm¹ÊÒâÕÒ²çÊÇ²»ÊÇ£¬ÄãÒª²»Òª°É£¬ÄãÒª²»Òª£¡
-				//===´úÂëÖ´ĞĞ===
+				//ä½ è¦è¯´ï¼Œè¿™æ–‡ä»¶å¤¹ä»–è¦æ˜¯å­˜åœ¨ï¼Œé‚£æ€ä¹ˆåŠæ
+				//è¿™æ–‡ä»¶å¤¹è¦æ˜¯å­˜åœ¨ï¼Œæˆ‘å°±è‡ªå·±åƒäº†å®ƒï¼Œæ»¡æ„äº†å§
+				//ä»£ç ï¼šelse      çœ‹ï¼Œæ–‡ä»¶å¤¹
+				//ä½ tmæ•…æ„æ‰¾èŒ¬æ˜¯ä¸æ˜¯ï¼Œä½ è¦ä¸è¦å§ï¼Œä½ è¦ä¸è¦ï¼
+				//===ä»£ç æ‰§è¡Œ===
 				File file_exs = new File("auth/passwords/" + account_username_and_password[0] + ".leekpassword");
-				Grasscutter.getLogger().info(String.format("³¢ÊÔ¶ÁÈ¡ÎÄ¼ş£¨Ïà¶ÔÂ·¾¶£©£º%s",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword")));
+				Grasscutter.getLogger().info(String.format("å°è¯•è¯»å–æ–‡ä»¶ï¼ˆç›¸å¯¹è·¯å¾„ï¼‰ï¼š%s",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword")));
 				if(!file_exs.exists()){
 					return;
-					//¹ÏÌ¯ÀÏ°åÏÕĞ©É¥Ãü
+					//ç“œæ‘Šè€æ¿é™©äº›ä¸§å‘½
 				}
 				else{
-					//ÎÔ²ÛÓĞ¶«Î÷ÊÇ°É
+					//å§æ§½æœ‰ä¸œè¥¿æ˜¯å§
 					String file_content = new String(FileUtils.read((file_exs)));
 					file_content = file_content.replace("\\p{C}", "");
 					account_username_and_password[1] = account_username_and_password[1].replace("\\p{C}", "");
-					Grasscutter.getLogger().info(String.format("%s ÎÄ¼ş´æÔÚ",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword")));
-					Grasscutter.getLogger().info(String.format("%s ¶ÁÈ¡ÄÚÈİÎª %s",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword"),file_content));
+					Grasscutter.getLogger().info(String.format("%s æ–‡ä»¶å­˜åœ¨",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword")));
+					Grasscutter.getLogger().info(String.format("%s è¯»å–å†…å®¹ä¸º %s",new String("auth/passwords/" + account_username_and_password[0] + ".leekpassword"),file_content));
 					if(!account_username_and_password[1].equals(file_content)){
-						Grasscutter.getLogger().info(String.format("ÓÃ»§%s³¢ÊÔÊ¹ÓÃÃÜÂë%sµÇÂ¼£¬µ«ÊÇËûÊäµÄºÜ³¹µ×£¬ÒòÎªËûÃÜÂë´íÁË£¬ÕıÈ·µÄÃÜÂëÓ¦¸ÃÊÇ£º\"%s\"", account_username_and_password[0], account_username_and_password[1], file_content));
+						Grasscutter.getLogger().info(String.format("ç”¨æˆ·%så°è¯•ä½¿ç”¨å¯†ç %sç™»å½•ï¼Œä½†æ˜¯ä»–è¾“çš„å¾ˆå½»åº•ï¼Œå› ä¸ºä»–å¯†ç é”™äº†ï¼Œæ­£ç¡®çš„å¯†ç åº”è¯¥æ˜¯ï¼š\"%s\"", account_username_and_password[0], account_username_and_password[1], file_content));
 						return;
-						//ÈöÈÕÀÊ£¡
+						//æ’’æ—¥æœ—ï¼
 					}
 				}
 			}
-			Grasscutter.getLogger().info("ÃÜÂëÃ»ÓĞÎÊÌâµÄ»°£¬ÄÇ¾Í¼ÌĞøµÇÂ¼¿©£¡");
+			Grasscutter.getLogger().info("å¯†ç æ²¡æœ‰é—®é¢˜çš„è¯ï¼Œé‚£å°±ç»§ç»­ç™»å½•å’¯ï¼");
 			// Create response json
 			if (requestData == null) {
 				return;
@@ -435,29 +435,29 @@ public final class DispatchServer {
 			String[] ac_and_ps = req.ctx().body().split("&");
 			String[] req_ac = ac_and_ps[0].split("=");
 			String[] req_ps = ac_and_ps[1].split("=");
-			Grasscutter.getLogger().info(String.format("À´×ÔÍøÒ³µÄÕËºÅ×¢²áÇëÇóÒÑÊÕµ½£¬ÕËºÅ£º%sÃÜÂë£º%s", req_ac[1], req_ps[1]));
+			Grasscutter.getLogger().info(String.format("æ¥è‡ªç½‘é¡µçš„è´¦å·æ³¨å†Œè¯·æ±‚å·²æ”¶åˆ°ï¼Œè´¦å·ï¼š%så¯†ç ï¼š%s", req_ac[1], req_ps[1]));
 			File new_account_file = new File("auth/passwords/" + req_ac[1] + ".leekpassword");
 			if (new_account_file.exists()) {
-				res.send("<meta charset=\"UTF-8\">ÕËºÅÒÑ´æÔÚ£¡");
+				res.send("<meta charset=\"UTF-8\">è´¦å·å·²å­˜åœ¨ï¼");
 				return;
 			}
 			else{
 				new_account_file.createNewFile();
-				Grasscutter.getLogger().info(String.format("´´½¨²¢Ïò%sĞ´ÈëÎÄ¼ş",new String("auth/passwords/" + req_ac[1] + ".leekpassword")));
+				Grasscutter.getLogger().info(String.format("åˆ›å»ºå¹¶å‘%så†™å…¥æ–‡ä»¶",new String("auth/passwords/" + req_ac[1] + ".leekpassword")));
 				FileUtils.write("auth/passwords/" + req_ac[1] + ".leekpassword", req_ps[1].getBytes());
 			}
 			emu.grasscutter.game.Account account = DatabaseHelper.createAccountWithId(req_ac[1],0);
 			if (account == null) {
-				res.send("<meta charset=\"UTF-8\">ÕËºÅÒÑ´æÔÚ£¡");
+				res.send("<meta charset=\"UTF-8\">è´¦å·å·²å­˜åœ¨ï¼");
 				return;
 			} else {
 				account.addPermission("*");
 				account.save(); // Save account to database.
 			}
-			res.send("<meta charset=\"UTF-8\">ÕËºÅ×¢²áÍê±Ïºó£¬»Øµ½ÓÎÏ·£¬Á¬½ÓË½·ş£¬²¢ÔÚµÇÂ¼Ò³ÃæµÄÓÃ»§ÃûÀ¸ÊäÈë\"ÓÃ»§Ãû:ÃÜÂë\"£¬ÖĞ¼äÓÃÓ¢ÎÄÃ°ºÅ¸ô¿ª£¬ÀıÈç Hoyoverse:114514homo £¬ÏÂÃæµÄÃÜÂëÀ¸Ëæ±ãÊäµã¶«Î÷£¬È»ºóµãµÇÂ¼¼´¿É¡£");
+			res.send("<meta charset=\"UTF-8\">è´¦å·æ³¨å†Œå®Œæ¯•åï¼Œå›åˆ°æ¸¸æˆï¼Œè¿æ¥ç§æœï¼Œå¹¶åœ¨ç™»å½•é¡µé¢çš„ç”¨æˆ·åæ è¾“å…¥\"ç”¨æˆ·å:å¯†ç \"ï¼Œä¸­é—´ç”¨è‹±æ–‡å†’å·éš”å¼€ï¼Œä¾‹å¦‚ Hoyoverse:114514homo ï¼Œä¸‹é¢çš„å¯†ç æ éšä¾¿è¾“ç‚¹ä¸œè¥¿ï¼Œç„¶åç‚¹ç™»å½•å³å¯ã€‚");
 		});
 
-		httpServer.get("/register.html",new DispatchHttpJsonHandler("<meta charset=\"UTF-8\"><h1>LeekcutterÕËºÅ×¢²áÒ³DEMO</h1><h3>ÔÚÏÂ·½ÊäÈëÄúµÄÕËºÅÃÜÂëÒÔ×¢²á</h3><form method=\"post\" action=\"register_submit\">ÕËºÅ£º<input type=\"text\" id=\"account_name\" name=\"account\"><br/>ÃÜÂë£º<input type=\"text\" id=\"password\" name=\"password\"><br/><input onclick=\"submit_btn()\" type=\"submit\"></input></form><div>×¢Òâ£ºÓÃ»§Ãû+ÃÜÂëµÄ×Ü³¤²»ÄÜ³¬¹ı50¸ö×Ö·û£¬·ñÔò½«ÎŞ·¨µÇÂ¼¡£¼Ç×¡ÊÇÓÃ»§ÃûºÍÃÜÂëµÄ×Ü³¤¶È²»ÄÜ³¬¹ı50×Ö·û£¬¶ø²»ÊÇÓÃ»§Ãû»òÃÜÂëÖĞµÄµ¥Ïî²»ÄÜ³¬¹ı50¸ö×Ö·û£¡£¡£¡</div><div>ÕËºÅ×¢²áÍê±Ïºó£¬»Øµ½ÓÎÏ·£¬Á¬½ÓË½·ş£¬²¢ÔÚµÇÂ¼Ò³ÃæµÄÓÃ»§ÃûÀ¸ÊäÈë\"ÓÃ»§Ãû:ÃÜÂë\"£¬ÖĞ¼äÓÃÓ¢ÎÄÃ°ºÅ¸ô¿ª£¬ÀıÈç Hoyoverse:114514homo £¬ÏÂÃæµÄÃÜÂëÀ¸Ëæ±ãÊäµã¶«Î÷£¬È»ºóµãµÇÂ¼¼´¿É¡£</div><div>Powered By Searchstars</div><div>LeekcutterÊÇ»ùÓÚGrasscutter¹¹½¨µÄ¿ªÔ´Èí¼ş</div><script>function submit_btn() {    alert(\"×¢²áÍê±Ï£¬»¹ĞĞ×ĞÏ¸ÔÄ¶ÁÒ³ÃæÏÂ·½µÄËµÃ÷ÔÙÀë¿ª£¡\")}</script>"));
+		httpServer.get("/register.html",new DispatchHttpJsonHandler("<meta charset=\"UTF-8\"><h1>Leekcutterè´¦å·æ³¨å†Œé¡µDEMO</h1><h3>åœ¨ä¸‹æ–¹è¾“å…¥æ‚¨çš„è´¦å·å¯†ç ä»¥æ³¨å†Œ</h3><form method=\"post\" action=\"register_submit\">è´¦å·ï¼š<input type=\"text\" id=\"account_name\" name=\"account\"><br/>å¯†ç ï¼š<input type=\"text\" id=\"password\" name=\"password\"><br/><input onclick=\"submit_btn()\" type=\"submit\"></input></form><div>æ³¨æ„ï¼šç”¨æˆ·å+å¯†ç çš„æ€»é•¿ä¸èƒ½è¶…è¿‡50ä¸ªå­—ç¬¦ï¼Œå¦åˆ™å°†æ— æ³•ç™»å½•ã€‚è®°ä½æ˜¯ç”¨æˆ·åå’Œå¯†ç çš„æ€»é•¿åº¦ä¸èƒ½è¶…è¿‡50å­—ç¬¦ï¼Œè€Œä¸æ˜¯ç”¨æˆ·åæˆ–å¯†ç ä¸­çš„å•é¡¹ä¸èƒ½è¶…è¿‡50ä¸ªå­—ç¬¦ï¼ï¼ï¼</div><div>è´¦å·æ³¨å†Œå®Œæ¯•åï¼Œå›åˆ°æ¸¸æˆï¼Œè¿æ¥ç§æœï¼Œå¹¶åœ¨ç™»å½•é¡µé¢çš„ç”¨æˆ·åæ è¾“å…¥\"ç”¨æˆ·å:å¯†ç \"ï¼Œä¸­é—´ç”¨è‹±æ–‡å†’å·éš”å¼€ï¼Œä¾‹å¦‚ Hoyoverse:114514homo ï¼Œä¸‹é¢çš„å¯†ç æ éšä¾¿è¾“ç‚¹ä¸œè¥¿ï¼Œç„¶åç‚¹ç™»å½•å³å¯ã€‚</div><div>Powered By Searchstars</div><div>Leekcutteræ˜¯åŸºäºGrasscutteræ„å»ºçš„å¼€æºè½¯ä»¶</div><script>function submit_btn() {    alert(\"æ³¨å†Œå®Œæ¯•ï¼Œè¿˜è¡Œä»”ç»†é˜…è¯»é¡µé¢ä¸‹æ–¹çš„è¯´æ˜å†ç¦»å¼€ï¼\")}</script>"));
 
 		// TODO: There are some missing route request types here (You can tell if they are missing if they are .all and not anything else)
 		//  When http requests for theses routes are found please remove it from the list in DispatchHttpJsonHandler and update the route request types here
@@ -491,7 +491,7 @@ public final class DispatchServer {
 		// hk4e-sdk-os-static.hoyoverse.com
 		httpServer.get("/hk4e_global/combo/granter/api/getConfig", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"protocol\":true,\"qr_enabled\":false,\"log_level\":\"INFO\",\"announce_url\":\"https://webstatic-sea.hoyoverse.com/hk4e/announcement/index.html?sdk_presentation_style=fullscreen\\u0026sdk_screen_transparent=true\\u0026game_biz=hk4e_global\\u0026auth_appid=announcement\\u0026game=hk4e#/\",\"push_alias_type\":2,\"disable_ysdk_guard\":false,\"enable_announce_pic_popup\":true}}"));
 		// hk4e-sdk-os-static.hoyoverse.com
-		httpServer.get("/hk4e_global/mdk/shield/api/loadConfig", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":6,\"game_key\":\"hk4e_global\",\"client\":\"PC\",\"identity\":\"I_IDENTITY\",\"guest\":false,\"ignore_versions\":\"\",\"scene\":\"S_NORMAL\",\"name\":\"Ô­Éñº£Íâ\",\"disable_regist\":false,\"enable_email_captcha\":false,\"thirdparty\":[\"fb\",\"tw\"],\"disable_mmt\":false,\"server_guest\":false,\"thirdparty_ignore\":{\"tw\":\"\",\"fb\":\"\"},\"enable_ps_bind_account\":false,\"thirdparty_login_configs\":{\"tw\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800},\"fb\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800}}}}"));
+		httpServer.get("/hk4e_global/mdk/shield/api/loadConfig", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":6,\"game_key\":\"hk4e_global\",\"client\":\"PC\",\"identity\":\"I_IDENTITY\",\"guest\":false,\"ignore_versions\":\"\",\"scene\":\"S_NORMAL\",\"name\":\"åŸç¥æµ·å¤–\",\"disable_regist\":false,\"enable_email_captcha\":false,\"thirdparty\":[\"fb\",\"tw\"],\"disable_mmt\":false,\"server_guest\":false,\"thirdparty_ignore\":{\"tw\":\"\",\"fb\":\"\"},\"enable_ps_bind_account\":false,\"thirdparty_login_configs\":{\"tw\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800},\"fb\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800}}}}"));
 		// Test api?
 		// abtest-api-data-sg.hoyoverse.com
 		httpServer.post("/data_abtest_api/config/experiment/list", new DispatchHttpJsonHandler("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));

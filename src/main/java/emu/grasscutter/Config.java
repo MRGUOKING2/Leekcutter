@@ -21,7 +21,7 @@ public final class Config {
 	public ServerRunMode RunMode = ServerRunMode.HYBRID; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
-	public String Language = "en_us";
+	public String Language = "zh_cn";
 
 	public GameServerOptions getGameServerOptions() {
 		return GameServer;
@@ -78,8 +78,8 @@ public final class Config {
 		public String ServerNickname = "Server";
 		public int ServerAvatarId = 10000007;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
-		public String WelcomeMotd = "»¶Ó­À´µ½Leekcutter£¡";
-		public String WelcomeMailContent = "Hi There!\r\nÔÚÒ»ÇĞÖ®Ç°£¬ÎÒÏëÏÈ¸ú´ó¼ÒËµ£º»¶Ó­À´µ½Leekcutter¡£LeekcutterÊÇ»ùÓÚGrasscutter¹¹½¨µÄGenshin Impact Private Server£¬Í¬Ê±Ò²½«×÷ÎªGrasscutterµÄ±¸Ì¥£¬²¢»áÓëGrasscutterµÄ´úÂë±£³ÖÍ¬²½¡£Ò»°ãÀ´Ëµ£¬Äã¿ÉÒÔ½«LeekcutterºÍGrasscutterµÄ¹ØÏµÀí½âÎªjoyuiºÍmiuiµÄ¹ØÏµ£¬Òò´Ë£¬Èç¹ûÄãÓöµ½ÁËÊ²Ã´ÎÊÌâ£¬GrasscutterµÄ½â¾ö·½°¸Ò»°ãÇé¿öÏÂ¶¼ÊÇ¿ÉÒÔÖ±½ÓÌ×ÓÃµ½LeekcutterÉÏµÄ£¬ËùÒÔLeekcutterÒ²½«²»Ìá¹©ÎÊÌâ·´À¡ÇşµÀÓë½»Á÷ÉçÇø£¬²¢¹ÄÀøÓÃ»§ÃÇ¼ÓÈëGrasscutterµÄÉçÇøÒÔ´úÌæLeekcutterµÄ½»Á÷ÉçÇø¡£ \r\n\r\nÁ´½Ó£º\r\n<type=\"browser\" text=\"GrasscutterµÄDiscord·şÎñÆ÷\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"GrasscutterµÄGithub¿ªÔ´Ò³Ãæ\" href=\"https://github.com/Grasscutters/Grasscutter\"/> <type=\"browser\" text=\"LeekcutterµÄGithub¿ªÔ´Ò³Ãæ\" href=\"https://github.com/Searchstars/Leekcutter\"/>";
+		public String WelcomeMotd = "æ¬¢è¿æ¥åˆ°Leekcutterï¼";
+		public String WelcomeMailContent = "Hi There!\r\nåœ¨ä¸€åˆ‡ä¹‹å‰ï¼Œæˆ‘æƒ³å…ˆè·Ÿå¤§å®¶è¯´ï¼šæ¬¢è¿æ¥åˆ°Leekcutterã€‚Leekcutteræ˜¯åŸºäºGrasscutteræ„å»ºçš„Genshin Impact Private Serverï¼ŒåŒæ—¶ä¹Ÿå°†ä½œä¸ºGrasscutterçš„å¤‡èƒï¼Œå¹¶ä¼šä¸Grasscutterçš„ä»£ç ä¿æŒåŒæ­¥ã€‚ä¸€èˆ¬æ¥è¯´ï¼Œä½ å¯ä»¥å°†Leekcutterå’ŒGrasscutterçš„å…³ç³»ç†è§£ä¸ºjoyuiå’Œmiuiçš„å…³ç³»ï¼Œå› æ­¤ï¼Œå¦‚æœä½ é‡åˆ°äº†ä»€ä¹ˆé—®é¢˜ï¼ŒGrasscutterçš„è§£å†³æ–¹æ¡ˆä¸€èˆ¬æƒ…å†µä¸‹éƒ½æ˜¯å¯ä»¥ç›´æ¥å¥—ç”¨åˆ°Leekcutterä¸Šçš„ï¼Œæ‰€ä»¥Leekcutterä¹Ÿå°†ä¸æä¾›é—®é¢˜åé¦ˆæ¸ é“ä¸äº¤æµç¤¾åŒºï¼Œå¹¶é¼“åŠ±ç”¨æˆ·ä»¬åŠ å…¥Grasscutterçš„ç¤¾åŒºä»¥ä»£æ›¿Leekcutterçš„äº¤æµç¤¾åŒºã€‚ \r\n\r\né“¾æ¥ï¼š\r\n<type=\"browser\" text=\"Grasscutterçš„DiscordæœåŠ¡å™¨\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"Grasscutterçš„Githubå¼€æºé¡µé¢\" href=\"https://github.com/Grasscutters/Grasscutter\"/> <type=\"browser\" text=\"Leekcutterçš„Githubå¼€æºé¡µé¢\" href=\"https://github.com/Searchstars/Leekcutter\"/>";
 		public Mail.MailItem[] WelcomeMailItems = {
 				new Mail.MailItem(13509, 1, 1),
 				new Mail.MailItem(201, 10000, 1),
