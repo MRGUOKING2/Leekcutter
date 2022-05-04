@@ -59,7 +59,7 @@ public final class AccountCommand implements CommandHandler {
                     Grasscutter.getLogger().info(String.format("创建并向%s写入文件",new String("auth/passwords/" + username + ".leekpassword")));
                     FileUtils.write("auth/passwords/" + username + ".leekpassword", "123".getBytes());
 
-                    CommandHandler.sendMessage(null, String.format(Grasscutter.getLanguage().Account_create_UID, account.getPlayerUid()));
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_create_UID.replace("{uid}", Integer.toString(account.getPlayerUid())));
                 }
                 return;
             case "delete":
