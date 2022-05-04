@@ -24,6 +24,7 @@ public final class Config {
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
 	public String Language = "zh_cn";
 
+	public Boolean OpenStamina = true;
 	public GameServerOptions getGameServerOptions() {
 		return GameServer;
 	}
