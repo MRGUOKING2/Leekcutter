@@ -188,6 +188,7 @@ public final class Grasscutter {
 		}
 
 		getLogger().info(language.Start_done);
+		getLogger().info("若汉化失效，请尝试重启服务器（输入stop命令后再开启服务器）");
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {

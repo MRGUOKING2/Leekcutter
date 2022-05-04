@@ -2,15 +2,15 @@ package emu.grasscutter;
 
 public final class CNLanguage {
     public String An_error_occurred_during_game_update = "游戏更新期间出错。";
-    public String Starting_Grasscutter = "启动 Grasscutter 中...";
+    public String Starting_Grasscutter = "启动 Leekcutter 中...";
     public String Invalid_server_run_mode = "无效的服务器运行模式。";
-    public String Server_run_mode = "服务器运行模式必须是 'HYBRID', 'DISPATCH_ONLY', 或者 'GAME_ONLY'。 无法启动 Grasscutter...";
+    public String Server_run_mode = "服务器运行模式必须是 'HYBRID', 'DISPATCH_ONLY', 或者 'GAME_ONLY'。 无法启动 Leekcutter...";
     public String Shutting_down = "服务器关闭...";
     public String Start_done = "完成! 获取帮助, 输入 \"help\"";
     public String Dispatch_mode_not_support_command = "该命令不支持在仅dispatch模式下使用。";
     public String Command_error = "命令错误:";
     public String Error = "发生了一个错误。";
-    public String Grasscutter_is_free = "Grasscutter 是一个免费软件。 如果你为此付出了金钱，你可能已经被骗了。 项目主页: https://github。com/Grasscutters/Grasscutter";
+    public String Grasscutter_is_free = "Leekcutter 是一个免费软件。 如果你为此付出了金钱，你可能已经被骗了。 项目主页: https://github.com/Searchstars/Leekcutter";
     public String Game_start_port = "服务器运行在端口 %s 上";
     public String Client_connect = "客户端 %s 已连接";
     public String Client_disconnect = "客户端 %s 已断开连接";
@@ -19,7 +19,7 @@ public final class CNLanguage {
     public String Use_default_keystore = "[Dispatch] 默认的 keystore password 加载成功。 请考虑在config。json中将密码设置为123456。";
     public String Load_keystore_error = "[Dispatch] 加载keystore时发生错误!";
     public String Not_find_ssl_cert = "[Dispatch] 没有找到SSL证书! 开始尝试以HTTP协议运行。";
-    public String Welcome = "欢迎使用 Grasscutter";
+    public String Welcome = "欢迎使用 Leekcutter";
     public String Potential_unhandled_request = "[Dispatch] 潜在的未经处理的 %s 请求: %s";
     public String Client_login_token = "[Dispatch] 客户端 %s 正在尝试使用token登陆";
     public String Client_token_login_failed = "[Dispatch] 客户端 %s 使用token登陆失败";
