@@ -11,16 +11,9 @@ import java.util.List;
         description = "重置选定玩家的商店刷新时间", permission = "server.resetshop")
 public final class ResetShopLimitCommand implements CommandHandler {
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender,Grasscutter.getLanguage().ResetShopLimit_usage);
-            return;
-        }
-
-        int target = Integer.parseInt(args.get(0));
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 

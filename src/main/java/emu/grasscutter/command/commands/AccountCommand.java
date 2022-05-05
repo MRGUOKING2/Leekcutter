@@ -14,7 +14,7 @@ import java.io.*;
 public final class AccountCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (sender != null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().This_command_can_only_run_from_console);
             return;

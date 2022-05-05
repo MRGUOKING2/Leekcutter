@@ -18,7 +18,7 @@ public final class CNLanguage {
     public String Not_load_keystore = "[Dispatch] 无法加载证书，正在尝试默认密码...";
     public String Use_default_keystore = "[Dispatch] 成功使用默认密码加载证书. 请考虑将config.json中的KeystorePassword项改为123456.";
     public String Load_keystore_error = "[Dispatch] 加载证书时出现错误!";
-    public String Not_find_ssl_cert = "[Dispatch] 未找到SSL证书，正在回滚至基本HTTP。";
+    public String Not_find_ssl_cert = "[Dispatch] 未找到SSL证书，正在回滚至HTTP模式。";
     public String Welcome = "欢迎使用Grasscutter";
     public String Potential_unhandled_request = "[Dispatch] 潜在的未处理请求: {method} {url}";
     public String Client_login_token = "[Dispatch] 客户端 {ip} 正在尝试使用token登录...";
@@ -31,7 +31,7 @@ public final class CNLanguage {
     public String Dispatch_start_server_port = "[Dispatch] Dispatch服务器已在端口 {port} 上开启。";
     public String Client_failed_login_account_create = "[Dispatch] 客户端 {ip} 登录失败: 已创建UID为 {uid} 的账户。";
     public String Client_failed_login_account_create_failed = "[Dispatch] 客户端 {ip} 登录失败: 创建账户失败。";
-    public String Client_failed_login_account_no_found = "[Dispatch] Client {ip} 登录失败: 未找到帐户。";
+    public String Client_failed_login_account_no_found = "[Dispatch] 客户端 {ip} 登录失败: 未找到帐户。";
     public String Client_login = "[Dispatch] 客户端 {ip} 以 {uid} 的身份登录。";
     public String Username_not_found = "未找到此用户名.";
     public String Username_not_found_create_failed = "未找到此用户名, 创建失败。.";
@@ -94,7 +94,7 @@ public final class CNLanguage {
 
     // Drop
     public String Drop_usage = "用法: drop <物品ID|物品名> [数量]";
-    public String Drop_dropped_of = "已投掷 {amount} 个 {item}.";
+    public String Drop_dropped_of = "已在地上丢弃 {amount} 个 {item}.";
 
     // EnterDungeon
     public String EnterDungeon_usage = "用法: enterdungeon <副本 id>";
@@ -103,7 +103,7 @@ public final class CNLanguage {
     public String EnterDungeon_you_in_that_dungeon = "你已经在此副本中了。";
 
     // GiveAll
-    public String GiveAll_usage = "用法: giveall [player] [amount]";
+    public String GiveAll_usage = "用法: giveall [玩家] [数量]";
     public String GiveAll_item = "正在给予所有物品...";
     public String GiveAll_done = "完成。";
     public String GiveAll_invalid_amount_or_playerId = "无效的数量或玩家ID";
@@ -128,9 +128,8 @@ public final class CNLanguage {
     public String Give_given_with_level_and_refinement = "已将 {amount} 个等级为 {lvl}, 精炼 {refinement} 的 {item} 给予 {target}.";
     public String Give_given_level = "已将 {amount} 个等级为 {lvl} 的 {item} 给与 {target}.";
 
-
     // GodMode
-    public String Godmode_status = "现已为 {name} {status} 无敌模式 ";
+    public String Godmode_status = "设置 {name} 的无敌模式为 {status}  ";
 
     // Heal
     public String Heal_message = "所有角色已被治疗。";
@@ -185,14 +184,14 @@ public final class CNLanguage {
     public String SendMail_Please_use = "请使用 `/sendmail {args}`";
     public String SendMail_set_title = "邮件标题已设为 '{title}'.\n使用 '/sendmail <邮件正文>' 以继续.";
     public String SendMail_set_contents = "邮件的正文如下:\n '{contents}'\n使用 '/sendmail <发送者署名>' 以继续.";
-	public String SendMail_set_message_sender = "邮件的发送者已设为 '{send}'.\n使用 '/sendmail <物品Id|物品名|finish(结束编辑并发送)> [数量] [等级]";
+    public String SendMail_set_message_sender = "邮件的发送者已设为 '{send}'.\n使用 '/sendmail <物品Id|物品名|finish(结束编辑并发送)> [数量] [等级]";
     public String SendMail_send = "已将 {amount} 个 {item} (等级 {lvl}) 作为邮件附件.\n你可以继续添加附件，也可以使用 `/sendmail finish` 来停止编辑并发送邮件.";
     public String SendMail_invalid_arguments_please_use = "无效的参数 \n 请使用 `/sendmail {args}`";
     public String SendMail_title = "<标题>";
     public String SendMail_message = "<正文>";
     public String SendMail_sender = "<发送者>";
     public String SendMail_arguments = "<物品Id|物品名|finish(结束编辑并发送)> [数量] [等级]";
-	public String SendMail_error = "错误:无效的编写阶段 {stage}. 需要stacktrace请看服务器命令行.";
+    public String SendMail_error = "错误:无效的编写阶段 {stage}. 需要stacktrace请看服务器命令行.";
 
     // SendMessage
     public String SendMessage_usage = "用法: sendmessage <玩家名> <消息>";
