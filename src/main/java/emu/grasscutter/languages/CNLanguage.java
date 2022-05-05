@@ -2,15 +2,15 @@ package emu.grasscutter.languages;
 
 public final class CNLanguage {
     public String An_error_occurred_during_game_update = "游戏更新时发生了错误.";
-    public String Starting_Grasscutter = "正在开启Grasscutter...";
+    public String Starting_Grasscutter = "正在开启Leekcutter...";
     public String Invalid_server_run_mode = "无效的服务器运行模式. ";
-    public String Server_run_mode = "服务器运行模式必须为以下几种之一: 'HYBRID'(混合模式), 'DISPATCH_ONLY'(仅dispatch模式), 或 'GAME_ONLY'(仅游戏模式). 无法启动Grasscutter...";
+    public String Server_run_mode = "服务器运行模式必须为以下几种之一: 'HYBRID'(混合模式), 'DISPATCH_ONLY'(仅dispatch模式), 或 'GAME_ONLY'(仅游戏模式). 无法启动Leekcutter...";
     public String Shutting_down = "正在停止....";
     public String Start_done = "加载完成！需要指令帮助请输入 \"help\"";
     public String Dispatch_mode_not_support_command = "仅dispatch模式无法使用指令。";
     public String Command_error = "命令错误:";
-    public String Error = "出现错误.";
-    public String Grasscutter_is_free = "Grasscutter是免费软件，如果你是花钱买到的，你大概被骗了。主页: https://github.com/Grasscutters/Grasscutter";
+    public String Error = "出现错误。";
+    public String Grasscutter_is_free = "Leekcutter是免费软件，如果你是花钱买到的，你大概被骗了。主页: https://github.com/Searchstars/Leekcutter";
     public String Game_start_port = "游戏服务器已在端口 {port} 上开启。";
     public String Client_connect = "来自 {address} 的客户端已连接。";
     public String Client_disconnect = "来自 {address} 的客户端已断开。";
@@ -19,7 +19,7 @@ public final class CNLanguage {
     public String Use_default_keystore = "[Dispatch] 成功使用默认密码加载证书. 请考虑将config.json中的KeystorePassword项改为123456.";
     public String Load_keystore_error = "[Dispatch] 加载证书时出现错误!";
     public String Not_find_ssl_cert = "[Dispatch] 未找到SSL证书，正在回滚至HTTP模式。";
-    public String Welcome = "欢迎使用Grasscutter";
+    public String Welcome = "欢迎使用Leekcutter";
     public String Potential_unhandled_request = "[Dispatch] 潜在的未处理请求: {method} {url}";
     public String Client_login_token = "[Dispatch] 客户端 {ip} 正在尝试使用token登录...";
     public String Client_token_login_failed = "[Dispatch] 客户端 {ip} 使用token登录失败。";
