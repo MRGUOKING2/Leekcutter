@@ -432,6 +432,14 @@ public final class DispatchServer {
 			String[] req_ac = ac_and_ps[0].split("=");
 			String[] req_ps = ac_and_ps[1].split("=");
 			Grasscutter.getLogger().info(String.format("来自网页的账号注册请求已收到，账号：%s密码：%s", req_ac[1], req_ps[1]));
+			File dir_auth = new File("auth");
+			File dir_auth_password = new File("auth/passwords");
+			if(!dir_auth.isDirectory() || !dir_auth.exists()){
+				dir_auth.mkdir();
+			}
+			if(!dir_auth_password.isDirectory() || !dir_auth_password.exists()){
+				dir_auth_password.mkdir();
+			}
 			File new_account_file = new File("auth/passwords/" + req_ac[1] + ".leekpassword");
 			if (new_account_file.exists()) {
 				res.send("<meta charset=\"UTF-8\">账号已存在！");
