@@ -82,6 +82,8 @@ public final class Config {
 		public int ServerAvatarId = 10000007;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "欢迎来到Leekcutter！";
+		public String WelcomeMailTitle = "欢迎来到Leekcutter！'[";
+		public String WelcomeMailSender = "S·E·N·D·E·R";
 		public String WelcomeMailContent = "Hi There!\r\n在一切之前，我想先跟大家说：欢迎来到Leekcutter。Leekcutter是基于Grasscutter构建的Genshin Impact Private Server，同时也将作为Grasscutter的备胎，并会与Grasscutter的代码保持同步。一般来说，你可以将Leekcutter和Grasscutter的关系理解为joyui和miui的关系，因此，如果你遇到了什么问题，Grasscutter的解决方案一般情况下都是可以直接套用到Leekcutter上的，所以Leekcutter也将不提供问题反馈渠道与交流社区，并鼓励用户们加入Grasscutter的社区以代替Leekcutter的交流社区。 \r\n\r\n链接：\r\n<type=\"browser\" text=\"Grasscutter的Discord服务器\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"Grasscutter的Github开源页面\" href=\"https://github.com/Grasscutters/Grasscutter\"/> <type=\"browser\" text=\"Leekcutter的Github开源页面\" href=\"https://github.com/Searchstars/Leekcutter\"/>";
 		public Mail.MailItem[] WelcomeMailItems = {
 				new Mail.MailItem(13509, 1, 1),
