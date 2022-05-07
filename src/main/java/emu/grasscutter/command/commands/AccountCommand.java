@@ -10,6 +10,7 @@ import emu.grasscutter.utils.FileUtils;
 import java.io.*;
 
 import static emu.grasscutter.utils.Language.translate;
+import emu.grasscutter.*;
 
 @Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "修改用户账号")
 public final class AccountCommand implements CommandHandler {

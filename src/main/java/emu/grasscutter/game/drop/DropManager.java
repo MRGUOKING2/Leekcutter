@@ -49,6 +49,7 @@ public class DropManager {
                     getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }
                 Grasscutter.getLogger().info("掉落物数据载入成功");
+                Grasscutter.getLogger().info("若出现The following languages mappings are available, please select one提示，输入chs并回车以选用简体中文");
             } else {
                 Grasscutter.getLogger().error("Unable to load drop data. Drop data size is 0.");
             }

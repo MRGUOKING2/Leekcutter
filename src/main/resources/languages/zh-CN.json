@@ -36,14 +36,14 @@
       }
     },
     "status": {
-      "free_software": "Grasscutter 是免费开源软件。如果你是付费购买的，那已经被骗了。Github：https://github.com/Grasscutters/Grasscutter",
-      "starting": "正在启动 Grasscutter...",
+      "free_software": "Leekcutter 是免费开源软件。如果你是付费购买的，那已经被骗了。Github：https://github.com/Searchstars/Leekcutter",
+      "starting": "正在启动 Leekcutter...",
       "shutdown": "正在关闭...",
       "done": "加載完成！输入 \"help\" 查看命令列表",
       "error": "发生了一个错误。",
-      "welcome": "欢迎使用 Grasscutter",
+      "welcome": "欢迎使用 Leekcutter",
       "run_mode_error": "无效的服务器运行模式： %s。",
-      "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
+      "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Leekcutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。"
     }
