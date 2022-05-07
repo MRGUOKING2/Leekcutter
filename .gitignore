@@ -67,3 +67,4 @@ mongod.exe
 /*.sh
 auth
 gacha_mappings.js
+data/gacha_mappings.js
