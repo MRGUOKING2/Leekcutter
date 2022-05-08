@@ -5,9 +5,11 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
+
 import static emu.grasscutter.utils.Language.translate;
-@Command(label = "say", usage = "say <message>", description = "作为服务器给选定玩家发送消息",
-        aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage")
+
+@Command(label = "say", usage = "say <message>",
+        aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage", description = "commands.sendMessage.description")
 public final class SendMessageCommand implements CommandHandler {
 
     @Override

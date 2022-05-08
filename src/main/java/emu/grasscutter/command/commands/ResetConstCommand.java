@@ -11,8 +11,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "resetconst", usage = "resetconst [all]",
-        description = "重置当前角色的命座，使用命令后重新登录生效",
-        aliases = {"resetconstellation"}, permission = "player.resetconstellation")
+        aliases = {"resetconstellation"}, permission = "player.resetconstellation", description = "commands.resetConst.description")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override

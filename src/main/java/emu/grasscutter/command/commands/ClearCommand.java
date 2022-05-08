@@ -13,7 +13,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
-        description = "删除未装备的解锁物品，包括五星",
+        description = "commands.clear.description",
         aliases = {"clear"}, permission = "player.clearinv")
 
 public final class ClearCommand implements CommandHandler {

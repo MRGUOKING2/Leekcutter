@@ -9,8 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "reload", usage = "reload",
-        description = "重载服务器config", permission = "server.reload")
+@Command(label = "reload", usage = "reload", permission = "server.reload", description = "commands.reload.description")
 public final class ReloadCommand implements CommandHandler {
 
     @Override

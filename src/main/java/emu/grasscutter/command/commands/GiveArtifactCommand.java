@@ -13,9 +13,12 @@ import emu.grasscutter.game.props.ActionReason;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import static emu.grasscutter.utils.Language.translate;
-@Command(label = "giveart", usage = "giveart <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "给你选定的玩家一个自定义的圣遗物", aliases = {"gart"}, permission = "player.giveart")
+
+@Command(label = "giveart", usage = "giveart <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", aliases = {"gart"}, permission = "player.giveart", description = "commands.giveArtifact.description")
 public final class GiveArtifactCommand implements CommandHandler {
+
 	@Override
 	public void execute(Player sender, Player targetPlayer, List<String> args) {
 		if (targetPlayer == null) {

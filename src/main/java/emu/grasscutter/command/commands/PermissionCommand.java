@@ -10,8 +10,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "permission", usage = "permission <add|remove> <permission>",
-        description = "授予或删除用户的权限", permission = "*")
+@Command(label = "permission", usage = "permission <add|remove> <permission>", permission = "*", description = "commands.permission.description")
 public final class PermissionCommand implements CommandHandler {
 
     @Override

@@ -10,9 +10,9 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "tpall", usage = "tpall",
-        description = "将你世界中的所有玩家传送到你的位置", permission = "player.tpall")
+@Command(label = "tpall", usage = "tpall", permission = "player.tpall", description = "commands.teleportAll.description")
 public final class TeleportAllCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {

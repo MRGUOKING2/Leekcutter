@@ -13,8 +13,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings("ConstantConditions")
-@Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]",
-        description = "发送邮件，详见参数", permission = "server.sendmail")
+@Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]", permission = "server.sendmail", description = "commands.sendMail.description")
 public final class SendMailCommand implements CommandHandler {
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
@@ -40,7 +39,7 @@ public final class SendMailCommand implements CommandHandler {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
-                            CommandHandler.sendMessage(sender, this.getClass().getAnnotation(Command.class).description() + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
+                            CommandHandler.sendMessage(sender, translate(this.getClass().getAnnotation(Command.class).description()) + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());
