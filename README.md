@@ -36,9 +36,11 @@
 **注:** 如果您从旧版本升级到新版本，最好删除 `config.json` 并启动服务端jar来重新生成它
 
 1. 获取 `leekcutter.jar`
-   - [自行构建](#构建)
+   - [自行构建（推荐，但需补全res）](#构建)
+   - [Actions（需手动补全文件，不推荐）](https://github.com/Searchstars/Leekcutter/actions)
+   - [Releases（版本落后，非最新构建，但无需补全res等文件）](https://github.com/Searchstars/Leekcutter/releases)
 2. 在**leekcutter.jar** 所在目录中创建 `resources` 文件夹并将 `BinOutput` 和 `ExcelBinOutput` 放入其中 *(查看 [wiki](https://github.com/Grasscutters/Grasscutter/wiki) 了解更多)*
-3. 通过命令 `java -jar leekcutter.jar` 来运行Grasscutter. **在此之前请确认MongoDB服务运行正常**
+3. 通过命令 `java -jar leekcutter.jar` 来运行Grasscutter. **在此之前请确认MongoDB服务运行正常，推荐使用MongoDBCompass来管理数据库**
 
 注：MongoDB下载地址：[https://www.mongodb.com/download-center/community](https://www.mongodb.com/download-center/community) 并建议在安装时勾选同时安装MongoDB Compass的勾选框，这将会大大提升你的数据库管理体验。
 
@@ -61,6 +63,7 @@ Leekcutter 使用 Gradle 来处理依赖及构建.
 
 - Java SE Development Kits - 17
 - Git（其实也可以用Github Desktop代替）
+- 一个有编程基础的脑子
 
 ##### Windows
 
@@ -84,11 +87,15 @@ chmod +x gradlew
 
 ## 账号系统
 
-你可以通过游戏内的account指令创建/删除用户，当然也可以使用网页来创建用户（或者被称为注册），这对于那些需要让其它玩家加入进同一个服务器一起游玩的人很有帮助。
+目前，这是Leekcutter的特色功能。
 
-若你想通过网页创建用户，那么一般情况下，网页一般在`localhost(server ip)/register.html`下，这也将会随着你在config.json中指定的ip与端口而变动。例如我的服务器地址是1.1.1.1，那么我的注册网页就应在`1.1.1.1/register.html`下。如果你拥有公网ip，你可以直接把这个链接发给你的朋友，让你的朋友在你的服务器中快速、便捷地注册账号（注意：用户名与密码的总长度必须小于50个字符！！！），而无需你的帮助。在网页注册的账号将会被以明文形式保存在服务器上，虽然用户不能轻易得到它，但这仍并不安全，所以不建议大型公开服务器采用。
+你可以通过游戏内的account指令创建/删除用户，当然也可以使用网页来创建用户（或者被称为注册），这对于那些需要让其它玩家加入同一个服务器一起游玩的人很有帮助，毕竟你无需再跟玩家们一个个的沟通、交流，并使用account指令创建用户账号了，只需要把注册页面的链接甩给他们让他们自行操作就好了。
+
+若你想通过网页创建用户，那么一般情况下，网页一般在`localhost(server ip)/register.html`下，这也将会随着你在config.json中指定的ip与端口而变动。例如我的服务器地址是1.1.1.1，那么我的注册网页就应在`1.1.1.1/register.html`下。如果你拥有公网ip，你可以直接把这个链接发给你的朋友，让你的朋友在你的服务器中快速、便捷地注册账号（注意：用户名与密码的总长度必须小于50个字符！！！），而无需你的帮助。注册的账号的用户名以及密码将会被以明文形式保存在服务器上，使用文件来存储而非数据库。虽然只要你不手贱乱开共享乱开端口，用户就不能轻易得到它，但这仍并不安全，所以不建议大型公开服务器采用。
 
 账号创建完毕后，在游戏内的登录和往常并不一样，你需要在游戏弹出的登录框的账号栏中填写`用户名:密码`，中间以英文冒号隔开，例如我的用户名是user333，密码是superidol，那么我应该在账号栏中输入：`user333:superidol`，随后在密码栏中随便输点什么，没错，你想输什么就输什么，然后点登录即可。若提示服务器错误，即表示你的密码错了。
+
+为什么游戏内登录窗口的密码栏无法使用？因为游戏内密码栏向服务器发送的数据使用RSA加密，而解密几乎是不可能的，所以目前也就只能这样凑合用用了。详见此[issue](https://github.com/Grasscutters/Grasscutter/issues/68)
 
 ## 命令列表
 
@@ -100,7 +107,7 @@ chmod +x gradlew
 
 # 快速排除问题
 
-* 如果编译未能成功,请检查您的jdk安装 (JDK 17并确认jdk处于环境变量`PATH`中，若您安装了多个版本的jdk，请删除其它版本的java的环境变量。
+* 如果编译未能成功,请检查您的jdk安装，若您安装了多个版本的jdk，请从`PATH`环境变量中删除其它版本的jdk的环境变量，并在cmd窗口中使用`java -version`来确保配置正常
 * 我的客户端无法登录/连接, 4206, 其它... - 大部分情况下这是因为您的代理存在问题.如果使用Fiddler请确认Fiddler监听端口不是`8888`
-* 启动顺序: MongoDB > Grasscutter > 代理程序 (mitmdump, fiddler等.) > 客户端
+* 启动顺序: MongoDB > Grasscutter > Fiddler Classic > 客户端
 * 如果提示MongoDB相关问题，请确认MongoDB运行正常
