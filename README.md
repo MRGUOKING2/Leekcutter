@@ -17,6 +17,16 @@
 * 物品栏相关 (接收物品/角色, 升级角色/武器等)
 * 汉化指令
 
+## 从Grasscutter迁移至Leekcutter
+
+由于Leekcutter重构了账号系统，所以每个用户都必须拥有一个密码，而在Grasscutter中创建的账号是没有密码的，自然无法登录。
+
+所以你需要在根目录下创建auth文件夹，在auth文件夹里创建passwords文件夹，然后创建一个叫“用户名.leekpassword”，内容即为密码。比如我之前的账号，用户名叫"abc"，那么就在auth/passwords文件夹下创建一个叫abc.leekpassword的文件，后缀为leekpassword，用记事本或其它编辑器打开，里面填你的新密码就好了
+
+## 从Leekcutter迁移至Grasscutter
+
+Leekcutter与Grasscutter共用同一个数据库，且Leekcutter的账号系统几乎是独立的，因此你可以直接将Leekcutter的jar替换为Grasscutter的jar而无需进行任何其余操作，账号系统将会消失，密码登录也将消失，用户可以直接输入用户名登录。
+
 ## 快速设置指南
 
 **附:** 加入Grasscutter的 [Discord](https://discord.gg/T5vZU6UyeG) 获取更多帮助！
