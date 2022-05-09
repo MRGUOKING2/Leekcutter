@@ -36,7 +36,7 @@
       }
     },
     "status": {
-      "free_software": "Leekcutter 是免费开源软件，遵循Apache-2.0 license。如果你是付费购买的，那已经被骗了。Github：https://github.com/Searchstars/Leekcutter",
+      "free_software": "Leekcutter 是免费开源软件，遵循AGPL-3.0 license。如果你是付费购买的，那已经被骗了。Github：https://github.com/Searchstars/Leekcutter",
       "starting": "正在启动 Leekcutter...",
       "shutdown": "正在关闭...",
       "done": "加载完成！输入 \"help\" 查看命令列表",
